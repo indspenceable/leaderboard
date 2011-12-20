@@ -14,15 +14,15 @@
 ActiveRecord::Schema.define(:version => 20111220072154) do
 
   create_table "matches", :force => true do |t|
-    t.string   "game"
+    t.string   "game",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "participants", :force => true do |t|
-    t.integer  "player_id"
-    t.integer  "match_id"
-    t.boolean  "winner"
+    t.integer  "player_id",  :null => false
+    t.integer  "match_id",   :null => false
+    t.boolean  "winner",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20111220072154) do
   add_index "participants", ["player_id", "match_id"], :name => "index_participants_on_player_id_and_match_id", :unique => true
 
   create_table "players", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
