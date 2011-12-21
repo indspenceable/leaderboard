@@ -1,0 +1,12 @@
+#match
+  %p= "Game #{@match.game.titleize}"
+  %p
+    Winners
+    %ul
+      - @match.winners.each do |p|
+        = link_to p.name.titleize, p
+  %p
+    Losers
+    %ul
+      - @match.losers.each do |p|
+        = link_to p.name.titleize, p

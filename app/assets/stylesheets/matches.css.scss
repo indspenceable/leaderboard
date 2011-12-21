@@ -1,3 +1,15 @@
 // Place all the styles related to the matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#matches {
+  width: 980px;
+  margin: auto;
+  text-align: center;
+}
+#match-list{
+  p {
+    border: 1px #f00 solid;
+    margin: 5px;
+  }
+}
