@@ -1,4 +1,8 @@
 class Participant < ActiveRecord::Base
-  belongs_to :match, :inverse_of => :participant
-  belongs_to :player, :inverse_of => :participant
+  belongs_to :match
+  belongs_to :player
+  
+  validate :match, :presence => true
+  validate :player, :presence => true
+  validate :winner, :presence => true
 end
