@@ -11,13 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220072154) do
+ActiveRecord::Schema.define(:version => 20111221203027) do
 
-  create_table "matches", :force => true do |t|
-    t.string   "game",       :null => false
+  create_table "games", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "matches", :force => true do |t|
+    t.integer  "game_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "matches", ["game_id"], :name => "index_on_game"
 
   create_table "participants", :force => true do |t|
     t.integer  "player_id",  :null => false
@@ -27,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20111220072154) do
     t.datetime "updated_at"
   end
 
-  add_index "participants", ["player_id", "match_id"], :name => "index_participants_on_player_id_and_match_id", :unique => true
+  add_index "participants", ["player_id", "match_id"], :name => "index_on_player_id_and_match_id", :unique => true
 
   create_table "players", :force => true do |t|
     t.string   "name",       :null => false
@@ -35,6 +43,6 @@ ActiveRecord::Schema.define(:version => 20111220072154) do
     t.datetime "updated_at"
   end
 
-  add_index "players", ["name"], :name => "index_players_on_name", :unique => true
+  add_index "players", ["name"], :name => "index_on_player_name", :unique => true
 
 end
