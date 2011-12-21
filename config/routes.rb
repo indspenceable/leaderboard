@@ -1,5 +1,5 @@
 Leaderboard::Application.routes.draw do
-  
+  root to: 'matches#index'
   resources :players
   resources :matches
   
