@@ -1,0 +1,34 @@
+%h1= @player.name
+%ul#navigation
+  %h2{:display => :inline}
+    %li#wins= link_to "Wins", "#"
+    %li#all-matches= link_to "All Matches", "#"
+    %li#losses= link_to "Losses", "#"
+#all-matches-content.content
+  - @player.matches.each do |match|
+    %p= link_to "Played #{match.game} on #{match.created_at.to_date.readable_inspect}", match
+#wins-content.content
+  - @player.wins.each do |match|
+    %p= link_to "Played #{match.game} on #{match.created_at.to_date.readable_inspect}", match
+#losses-content.content
+  - @player.losses.each do |match|
+    %p= link_to "Played #{match.game} on #{match.created_at.to_date.readable_inspect}", match
+    
+    
+:javascript
+  $(function() {
+    $('#wins').click(function() {
+      $('.content').hide()
+      $('#wins-content').show()
+    })
+    $('#losses').click(function() {
+      $('.content').hide()
+      $('#losses-content').show()
+    })
+    $('#all-matches').click(function() {
+      $('.content').hide()
+      $('#all-matches-content').show()
+    })
+    
+    $('#all-matches').trigger('click');
+  });
