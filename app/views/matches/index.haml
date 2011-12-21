@@ -2,4 +2,6 @@
   #new= link_to "Add match", new_match_path
   #match-list
     - @matches.each do |match|
-      %p= link_to "#{match.game}, on #{match.created_at.to_date.readable_inspect}", match
+      %p
+        = link_to "#{match.game.titleize}", match.game
+        = link_to "on #{match.created_at.to_date.readable_inspect}", match
