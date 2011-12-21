@@ -7,6 +7,6 @@ class CreateParticipants < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :participants, [:player_id, :match_id], :unique => true
+    add_index :participants, [:player_id, :match_id], unique: true, name: 'index_on_player_id_and_match_id'
   end
 end

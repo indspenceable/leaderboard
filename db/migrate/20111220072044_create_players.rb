@@ -5,6 +5,6 @@ class CreatePlayers < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :players, :name, :unique => true
+    add_index :players, :name, unique: true, name: 'index_on_player_name'
   end
 end
