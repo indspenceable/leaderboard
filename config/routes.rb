@@ -1,7 +1,9 @@
 Leaderboard::Application.routes.draw do
+
   root to: 'matches#index'
   resources :players
   resources :matches
+  resources :games
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
