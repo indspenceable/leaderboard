@@ -1,4 +1,4 @@
-== Leaderboard
+# Leaderboard
 This is a simple website that I made to start keeping track of our gaming 
 history at work. Every time you play a board game, just mark it down on this
 website. Eventually, you'll be able to see your records over the long run, 
@@ -10,7 +10,7 @@ details on any specific aspect that you want, in the long run, but to use the
 app you should only need to enter the game name and the names of the winners
 and losers.
 
-===Todo
+## Todo
 
 * Add image functionality for games. Every time a game is displayed, it should show the image for that game.
 * Filtering on a players games
