@@ -8,4 +8,7 @@ class Player < ActiveRecord::Base
   def losses
     Match.joins(:participants).where(:participants => {:winner => false, :player_id => self.id})
   end
+  def titleize
+    name.titleize
+  end
 end
