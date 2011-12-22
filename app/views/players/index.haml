@@ -1,4 +1,3 @@
 #players
   - @players.each do |player|
-    %p
-      %em= link_to player.name, player
+    %p= link_to player.titleize, player
