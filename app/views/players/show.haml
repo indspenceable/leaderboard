@@ -6,13 +6,13 @@
     %li#losses= link_to "Losses", "#"
 #all-matches-content.content
   - @player.matches.each do |match|
-    %p= link_to_game_and_match match.game.titleize,"on #{match.created_at.to_date.readable_inspect}", match
+    %p= display_match match
 #wins-content.content
   - @player.wins.each do |match|
-    %p= link_to_game_and_match match.game.titleize,"on #{match.created_at.to_date.readable_inspect}", match
+    %p= display_match match
 #losses-content.content
   - @player.losses.each do |match|
-    %p= link_to_game_and_match match.game.titleize,"on #{match.created_at.to_date.readable_inspect}", match
+    %p= display_match match
     
     
 :javascript
