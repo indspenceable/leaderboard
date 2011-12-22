@@ -6,4 +6,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    #nav.border
+      Leadrboard
+      = link_to "P", players_path
+      = link_to "M", matches_path
+      = link_to "G", games_path
+    #content
+      = yield

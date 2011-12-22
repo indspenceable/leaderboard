@@ -1,6 +1,6 @@
-%h1= @player.name
-%ul#navigation
-  %h2{:display => :inline}
+%h1{style: 'display: inline;'}= @player.titleize
+%ul#navigation{style: 'display: inline;'}
+  %h2{style: 'display: inline;'}
     %li#wins= link_to "Wins", "#"
     %li#all-matches= link_to "All Matches", "#"
     %li#losses= link_to "Losses", "#"
@@ -19,15 +19,21 @@
   $(function() {
     $('#wins').click(function() {
       $('.content').hide()
+      $('li').removeClass("selected")
       $('#wins-content').show()
+      $('#wins').addClass("selected");
     })
     $('#losses').click(function() {
       $('.content').hide()
+      $('li').removeClass("selected")
       $('#losses-content').show()
+      $('#losses').addClass("selected");
     })
     $('#all-matches').click(function() {
       $('.content').hide()
-      $('#all-matches-content').show()
+      $('li').removeClass("selected")
+      $('#all-matches-content').show().addClass("")
+      $('#all-matches').addClass("selected");
     })
     
     $('#all-matches').trigger('click');
