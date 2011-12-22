@@ -1,0 +1,38 @@
+// Place all the styles related to the content column.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: sans-serif;
+  background: #CCC;
+  a {
+    color: #059;
+  }
+  a:hover {
+    color: #578;
+  }
+  #nav {
+    width: 980px;
+    margin: auto;
+    text-align: center;
+    background: #BBB;
+  }
+  .border {
+    border: 1px solid #111;
+  }
+  #content {
+    width: 640px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .half {
+    width: 49%;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float:right;
+  }
+}
