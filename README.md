@@ -12,6 +12,8 @@ and losers.
 
 ## Todo
 
+* Game Aliases. BSG and Battlestar Galactica should point to the samething.
+* Offer autocorrect for game names.
 * Add image functionality for games. Every time a game is displayed, it should show the image for that game.
 * Filtering on a players games
 * Pagination on everything.
