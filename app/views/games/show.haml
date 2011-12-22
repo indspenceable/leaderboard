@@ -2,4 +2,4 @@
   %h1= @game.name.titleize
   #matches
     - @game.matches.each do |match|
-      %p= link_to "#{match.players.map(&:titleize).to_sentence} played on #{match.created_at.to_date.readable_inspect}", match
+      %p= display_match match

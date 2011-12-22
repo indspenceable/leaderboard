@@ -7,9 +7,11 @@ body {
   background: #CCC;
   a {
     color: #059;
+    text-decoration: none;
   }
   a:hover {
     color: #578;
+    text-decoration: underline;
   }
   #nav {
     width: 980px;

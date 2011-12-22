@@ -4,6 +4,6 @@ module ApplicationHelper
   end
   
   def display_match match
-    link_to_game_and_match(match.game.titleize, match.created_at.to_date.readable_inspect, match) +  link_to("(delete)", match_path(match), method: :delete)
+    (match.players.map{|p| link_to p.titleize, p }.to_sentence + " played " + link_to(match.game.titleize, match.game) + " on " + link_to(match.created_at.to_date.readable_inspect, match)).html_safe
   end
 end
