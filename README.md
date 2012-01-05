@@ -12,6 +12,7 @@ and losers.
 
 ## Todo
 
+* Update models so that they only create connections after save, OR, so that they create connections if those attributes are set.
 * Game Aliases. BSG and Battlestar Galactica should point to the samething.
 * Offer autocorrect for game names.
 * Add image functionality for games. Every time a game is displayed, it should show the image for that game.
