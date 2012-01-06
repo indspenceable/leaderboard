@@ -11,10 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111221203027) do
+ActiveRecord::Schema.define(:version => 20120105211350) do
+
+  create_table "game_aliases", :force => true do |t|
+    t.string   "name"
+    t.integer  "game_id"
+    t.boolean  "primary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "game_aliases", ["game_id", "primary"], :name => "unique_index_on_game_id_and_primary", :unique => true
+  add_index "game_aliases", ["name"], :name => "unqiue_index_on_names", :unique => true
 
   create_table "games", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
