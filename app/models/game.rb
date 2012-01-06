@@ -5,6 +5,11 @@ class Game < ActiveRecord::Base
   def name
     game_aliases.where(primary: true).first.name
   end
+  def self.find_by_name name
+    GameAlias.find_by_name(name).tap do |a|
+      return a.game if a
+    end
+  end
   
   def titleize
     name.titleize
