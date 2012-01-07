@@ -18,13 +18,13 @@ class Match < ActiveRecord::Base
   before_create do
     self.game = Game.find_or_create_by_name(game_name)
   end
-  after_create do
+  after_save do
     winner_names.split.map(&:downcase).each do |winner|
       Participant.create(:player => Player.find_or_create_by_name(winner), :match => self, :winner => true)
-    end
+    end unless winner_names.empty?
     loser_names.split.map(&:downcase).each do |loser|
       Participant.create(:player => Player.find_or_create_by_name(loser), :match => self, :winner => false)
-    end
+    end unless loser_names.empty?
   end
   
 end
