@@ -11,4 +11,12 @@ class Player < ActiveRecord::Base
   def titleize
     name.titleize
   end
+  
+  def to_param
+    name
+  end
+  def self.from_param param
+    find_by_name(param)
+  end
+  
 end
