@@ -12,13 +12,13 @@ and losers.
 
 ## Todo
 
-* Update models so that they only create connections after save, OR, so that they create connections if those attributes are set.
-* Game Aliases. BSG and Battlestar Galactica should point to the samething.
+* Game Aliases. BSG and Battlestar Galactica should point to the same thing. (In branch)
 * Offer autocorrect for game names.
 * Add image functionality for games. Every time a game is displayed, it should show the image for that game.
-* Filtering on a players games
+* Filtering on a player's games.
 * Pagination on everything.
 * Add player details (preferences, age, location, email, etc)
 * Add game details (number of players, game notes for a particularly epic game, etc)
 * Add game tags (strategy, coop, etc)
 * How do you deal with draws?
+* Test everything (in branch)
