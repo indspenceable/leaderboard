@@ -6,4 +6,8 @@ module ApplicationHelper
   def display_match match
     (match.players.map{|p| link_to p.titleize, p }.to_sentence + " played " + link_to(match.game.titleize, match.game) + " on " + link_to(match.created_at.to_date.readable_inspect, match)).html_safe
   end
+  
+  def logged_in?
+    current_user
+  end
 end

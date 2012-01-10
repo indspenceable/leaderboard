@@ -7,9 +7,24 @@
     = csrf_meta_tags
   %body
     #nav.border
-      Leadrboard
-      = link_to "P", players_path
-      = link_to "M", matches_path
-      = link_to "G", games_path
+      %div
+        Leadrboard
+        = link_to "P", players_path
+        = link_to "M", matches_path
+        = link_to "G", games_path
+      %div
+        - if logged_in?
+          Logged in as 
+          = current_user.display_name
+          = link_to "Log out", signout_path
+        - else
+          = link_to "Log in with google.", '/auth/google'
+      %div
+        - if flash[:error] || flash[:notice]
+          #flash
+            - if flash[:error]
+              #error{style: 'color: #922'}= flash[:error]
+            - if flash[:notice]
+              #notice{style: 'color: #292'}= flash[:notice]
     #content
       = yield

@@ -1,5 +1,6 @@
 #matches
-  %p= link_to "Add match", new_match_path
+  - if logged_in?
+    %p= link_to "Add match", new_match_path
   #match-list
     - @matches.each do |match|
       %p
