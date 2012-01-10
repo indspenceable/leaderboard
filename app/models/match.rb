@@ -1,6 +1,7 @@
 class Match < ActiveRecord::Base
   attr_accessor :winner_names, :loser_names, :game_name
   belongs_to :user
+  validate :user_id, presence: true
   
   has_many :participants, :inverse_of => :match
   has_many :players, :through => :participants, :inverse_of => :matches

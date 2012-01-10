@@ -14,8 +14,10 @@ class MatchesController < ApplicationController
   end
   
   def create
-    @match = Match.new(params[:match])
-    if @match.save!
+    @match = Match.new(params[:match]) do |m|
+      m.user = current_user
+    end
+    if @match.save
       redirect_to @match
     else
       render :action => 'new'
