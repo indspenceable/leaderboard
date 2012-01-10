@@ -8,6 +8,10 @@ class Match < ActiveRecord::Base
   belongs_to :game
   validate :game, :presence => true
   
+  default_scope do
+    order("created_on")
+  end
+  
   def winners
     Player.joins(:participants).where(:participants => {:winner => true, :match_id => self.id})
   end
