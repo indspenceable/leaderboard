@@ -9,7 +9,7 @@ class Match < ActiveRecord::Base
   validate :game, :presence => true
   
   default_scope do
-    order(:created_at)
+    order('created_at DESC')
   end
   
   def winners
