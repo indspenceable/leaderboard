@@ -21,6 +21,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'omniauth-google'
 group :test do
   gem 'rspec-rails'
 end
